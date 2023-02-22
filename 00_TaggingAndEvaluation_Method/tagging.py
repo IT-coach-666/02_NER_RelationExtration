@@ -2,41 +2,6 @@ import os.path
 from pysenal import read_lines_lazy
 
 
-"""
-中文命名实体识别的标注方法，本文只介绍常见的标注方法。
-
-# 项目目录
-命名实体标注
-    |-- data
-        |-- error.txt       错误标记（word_dict.txt中内容不全）
-        |-- Tagging.txt     标记文本
-        |-- noTagging.txt   未标记文本
-        |-- word_dict.txt   需要标注的内容
-    |-- main.py             主函数
-
-# 三种标注方法
-BIO（B：begin，I：inside，O：outside）
-B-X：实体 X 的开头
-I-X：实体的结尾
-O：不属于任何类型的
-
-BMES（B：begin，M：middle，E：end，S：single）
-B-X：一个词的词首位值
-M-X：一个词的中间位置
-E-X：一个词的末尾位置
-S-X：一个单独的字词
-
-
-BIOES（B：begin，I：inside，O：outside，E：end，S：single）
-B-x：开始
-I-x：内部
-O：非实体
-E-x：实体尾部
-S-x：该词本身就是一个实体
-"""
-
-
-
 def BIO(tag_list, index_start_tag, tag_name, keyword):
     """
     tag_list: 待标注的文本的列表, 长度等于待标注的文本长度;
@@ -201,5 +166,3 @@ f_error = "./data/error.txt"
 f_input = './data/noTagging.txt'
 f_output = './data/Tagging.txt'
 tagging(tagging_method, map_taggingMethodFunc, f_input, f_output, f_feature_label, f_error)
-
-
