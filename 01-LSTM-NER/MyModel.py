@@ -6,7 +6,7 @@ class LSTMModel(nn.Module):
     def __init__(self, token_num, class_num, embedding_num, hidden_num, bi=True):
         super().__init__()
 
-        #self.pred = None
+        self.pred = None
         # jy: Embedding(1794, 101)
         self.embedding = nn.Embedding(token_num, embedding_num)
         # jy: LSTM(101, 107, batch_first=True)
@@ -31,7 +31,7 @@ class LSTMModel(nn.Module):
         out, _ = self.lstm(embedding)
         # jy: 经过处理后, pred 维度为: torch.Size([batch_size, 自己问, 29])
         pred = self.classifier(out)
-        #self.pred = torch.argmax(pred, dim=-1).reshape(-1)
+        self.pred = torch.argmax(pred, dim=-1).reshape(-1)
 
         if label is not None:
             # jy: pred.shape[-1] 为 class_num

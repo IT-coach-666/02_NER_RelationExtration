@@ -20,8 +20,8 @@ def parsers():
     #parser.add_argument("--is_do_test_only", type=bool, default=False)
     parser.add_argument("--is_do_test_only", type=bool, default=True)
     # jy: 是否仅进行 predict, 不进行训练;
-    parser.add_argument("--is_do_predict_only", type=bool, default=False)
-    #parser.add_argument("--is_do_predict_only", type=bool, default=True)
+    #parser.add_argument("--is_do_predict_only", type=bool, default=False)
+    parser.add_argument("--is_do_predict_only", type=bool, default=True)
 
     parser.add_argument('--epochs', type=int, default=230)
     parser.add_argument('--batch_size', type=int, default=32)
