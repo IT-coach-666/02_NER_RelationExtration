@@ -28,6 +28,7 @@ def parsers():
     parser.add_argument('--embedding_num', type=int, default=101)
     parser.add_argument('--hidden_num', type=int, default=107)
     parser.add_argument('--learn_rate', type=float, default=1e-4)
+    # jy: 将该参数设置为 True 即为 BiLSTM-NER 任务（实验表明 BiLSTM 相比于 LSTM 有显著提升）
     parser.add_argument('--bi', type=bool, default=False)
     parser.add_argument("--save_model_best", type=str, default=os.path.join(dir_model_out, "best_model.pth"))
     parser.add_argument("--save_model_last", type=str, default=os.path.join(dir_model_out, "last_model.pth"))
